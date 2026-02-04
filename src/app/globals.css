@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mert Teknik Design System - Corporate Blue Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 96%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 210 15% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 210 100% 95%;
+    --accent-foreground: 210 100% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand colors */
+    --brand-blue: 210 100% 45%;
+    --brand-blue-dark: 210 100% 35%;
+    --brand-blue-light: 210 100% 95%;
+    --brand-gray: 220 20% 25%;
+    --brand-gray-light: 220 10% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%) 0%, hsl(210 100% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 50% / 0.1) 0%, hsl(210 100% 60% / 0.05) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(210 20% 50% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(210 20% 50% / 0.1), 0 2px 4px -2px hsl(210 20% 50% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(210 20% 50% / 0.1), 0 4px 6px -4px hsl(210 20% 50% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(210 20% 50% / 0.1), 0 8px 10px -6px hsl(210 20% 50% / 0.1);
+    --shadow-card: 0 4px 20px -2px hsl(210 100% 45% / 0.15);
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 55%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 220 15% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 210 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-fade-in-delay-4 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover scale effect */
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .hover-scale:hover {
+    @apply scale-105;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Container max width */
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
