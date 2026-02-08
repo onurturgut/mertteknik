@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,10 +12,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative py-12 md:py-16 flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/30" />
-      
+
       {/* Decorative circles */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -32,7 +32,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main heading */}
-          <h1 className="animate-fade-in-up animate-fade-in-delay-1 text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="animate-fade-in-up animate-fade-in-delay-1 text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
             Profesyonel
             <span className="text-primary block">Klima Teknik Servisi</span>
           </h1>
@@ -98,3 +98,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

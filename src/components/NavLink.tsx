@@ -26,7 +26,7 @@ const isHashOnly = (href: string) => href.startsWith("#");
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
   ({ className, activeClassName, pendingClassName, href, ...props }, ref) => {
-    const pathname = usePathname();
+    const pathname = usePathname() ?? "";
     const active = !isHashOnly(href) && isActivePath(pathname, href);
 
     return (

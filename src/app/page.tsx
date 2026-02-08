@@ -1,14 +1,13 @@
-import Header from "@/components/Header";
+﻿import Header from "@/components/Header";
 import HeroSection from "@/components/sections/HeroSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
-import BrandsSection from "@/components/sections/BrandsSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/sections/Footer";
-import MobileCallButton from "@/components/MobileCallButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
-export default function HomePage() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -16,12 +15,12 @@ export default function HomePage() {
         <HeroSection />
         <ServicesSection />
         <WhyUsSection />
-        <BrandsSection />
         <AboutSection />
         <ContactSection />
       </main>
       <Footer />
-      <MobileCallButton />
+      <WhatsAppButton />
     </div>
   );
 }
+

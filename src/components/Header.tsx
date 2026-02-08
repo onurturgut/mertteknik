@@ -1,20 +1,20 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { href: "#hizmetler", label: "Hizmetler" },
-  { href: "#neden-biz", label: "Neden Biz?" },
-  { href: "#markalar", label: "Markalar" },
-  { href: "#hakkimizda", label: "Hakkımızda" },
-  { href: "#iletisim", label: "İletişim" },
-];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#hizmetler", label: "Hizmetler" },
+    { href: "#neden-biz", label: "Neden Biz?" },
+    { href: "#hakkimizda", label: "Hakkımızda" },
+    { href: "#iletisim", label: "İletişim" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,12 +40,18 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-primary-foreground">MT</span>
+          <Link href="/" className="flex items-center gap-1 ml-[4.25rem] md:ml-[4.25rem]">
+            <div className="w-[6rem] h-[5rem] sm:w-[7.5rem] sm:h-[6rem] md:w-[7.5rem] md:h-[6rem] lg:w-[8.5rem] lg:h-[7rem] rounded-lg flex items-center justify-center">
+              <img
+                src="/images/logo.png"
+                alt="Mert Teknik Logo"
+                className="w-[4.75rem] h-[4rem] sm:w-[6rem] sm:h-[5rem] md:w-[6rem] md:h-[5rem] lg:w-[6.75rem] lg:h-[5.75rem]"
+              />
             </div>
-            <span className="text-xl font-bold text-foreground">Mert Teknik</span>
-          </a>
+            <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary whitespace-nowrap">
+              Viessmann Mert Teknik
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
@@ -107,3 +113,4 @@ const Header = () => {
 };
 
 export default Header;
+
