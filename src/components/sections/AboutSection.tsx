@@ -123,7 +123,6 @@ const AboutSection = () => {
                     }}
                   >
                     <div className="aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-muted">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={product.image}
                         alt={product.name}
@@ -171,7 +170,6 @@ const AboutSection = () => {
                   infoMode ? "aspect-[21/9]" : "aspect-[16/9]"
                 }`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={activeProduct.image}
                   alt={activeProduct.name}
